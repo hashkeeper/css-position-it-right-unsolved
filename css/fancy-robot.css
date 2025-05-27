@@ -25,6 +25,9 @@
   top: 40px;
   left: 20px;
   background-image: url(https://picsum.photos/id/524/354);
+  animation-duration: 3s;
+  animation-name: rotate-360;
+  animation-iteration-count: infinite;
 }
 
 .robot-eye-right {
@@ -35,6 +38,9 @@
   position: relative;
   top: -160px;
   left: 550px;
+  animation-duration: 3s;
+  animation-name: opacity-change;
+  animation-iteration-count: infinite;
 }
 
 .robot-ear-left {
@@ -46,7 +52,9 @@
   border-width: 50px 18px 0;
   border-style: solid;
   border-color: navy transparent;
-  transform: rotate(270deg);
+  animation-duration: 3s;
+  animation-name: grow-shrink-1;
+  animation-iteration-count: infinite;
 }
 .robot-ear-left:before {
   content: "";
@@ -69,7 +77,9 @@
   border-width: 50px 18px 0;
   border-style: solid;
   border-color: navy transparent;
-  transform: rotate(90deg);
+  animation-duration: 3s;
+  animation-name: grow-shrink-2;
+  animation-iteration-count: infinite;
 }
 .robot-ear-right:before {
   content: "";
@@ -106,6 +116,11 @@
   border-color: palegreen transparent transparent transparent;
   border-width: 70px 50px 0 50px;
 }
+.robot-nose:hover {
+  animation-duration: 3s;
+  animation-name: rotate-360;
+  animation-iteration-count: infinite;
+}
 
 .robot-teeth {
   width: 600px;
@@ -127,6 +142,9 @@
   border-bottom-color: aqua;
   position: relative;
   top: -25px;
+  animation-duration: 1s;
+  animation-name: change-position;
+  animation-iteration-count: infinite;
 }
 .robot-tooth:before {
   content: '';
@@ -148,6 +166,9 @@
   top: -790px;
   left: 25px;
   display: flex;
+  animation-duration: 1s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
 
 }
 
@@ -163,4 +184,85 @@
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: relative;
   left: 125px;
+  animation-duration: 1s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes opacity-change {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes grow-shrink-1 {
+  0% {
+    transform: scale(1) rotate(270deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(270deg);
+  }
+  100% {
+    transform: scale(1) rotate(270deg);
+  }
+}
+
+@keyframes grow-shrink-2 {
+  0% {
+    transform: scale(1) rotate(90deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+@keyframes change-position {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(15px, 5px);
+  }
+  50% {
+    transform: translate(-15px, -5px);
+  }
+  75% {
+    transform: translate(15px, 5px);
+  }
+  100% {
+    transform: translate(-3px, -7px);
+  }
+}
+
+@keyframes color-change {
+  0% {
+    background: green;
+  }
+  50% {
+    background: brown;
+  }
+  100% {
+    background: green;
+  }
 }
